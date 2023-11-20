@@ -29,11 +29,11 @@
                    <div class="row scrollable-content">
                    <div class="col-4 mt-2" v-for="producto in productos" :key="producto">
                         <div class="card" style="width: 18rem;">
-                           <img class="card-img-top" loading="lazy" src="@/assets/pngwing.png" alt="Imagen de Bienvenida">
+                           <img class="card-img-top" loading="lazy" :src="producto.imagen" :alt="producto.titulo">
                            <div class="card-body">
                                <h5 class="card-title">{{ producto.titulo }}</h5>
                                <p class="card-text">{{ producto.descrip }}</p>
-                               <p class="card-text">{{ producto.precio }}</p>
+                               <p class="card-text">{{ formatoPesos(producto.precio) }}</p>
                                <button type="button"  @click="showData(producto)" class="btn btn-primary">Añadir al Carrito</button>
                            </div>
                        </div>
@@ -47,13 +47,16 @@
                  <div class="card-body">
                      <div class="row">
                        <div class="col">
-                         <ul v-for="producto in prodoctoLista" :key="producto">
-                           <li>{{producto.titulo}} = {{ producto.precio }}</li>
-                         </ul>
+                        <ul v-for="producto in prodoctoLista" :key="producto">
+                          <li> 
+                            <img class="card-img-top" width="5%" loading="lazy" :src="producto.imagen" :alt="producto.titulo">
+                            {{producto.titulo}} = {{ formatoPesos(producto.precio) }}
+                          </li>
+                        </ul>
                        </div>
                      </div>  
 
-                     <p class="card-text"><strong>Total:</strong> {{ totalCarrito }}</p>
+                     <p class="card-text"><strong>Total:</strong> {{ formatoPesos(totalCarrito)}}</p>
                      <button type="button" class="btn btn-primary mt-2">Comprar</button><br>
                      <button type="button" class="btn btn-danger mt-3" @click="clearData">Limpiar carrito</button>
                  </div>
@@ -75,6 +78,7 @@
 
 </template>
 <script>
+
 export default {
  name: 'HomeView',
 //   props: {
@@ -86,19 +90,29 @@ export default {
      totalCarrito: 0,
      totales: [],
      productos: [
-       { id: 1, titulo: 'motorola one fusion', precio: 1000.000, descrip: 'gb 68 , ram 4'},
-       { id: 2, titulo: 'samsung galaxy s4 ', precio: 1500.000, descrip: 'bonito'},
-       { id: 3, titulo: 'iphone 8 plus', precio: 2000.000, descrip: 'bonito'},
-       { id: 4, titulo: 'iphone x ', precio: 2500.000, descrip: 'bonito'},
-       { id: 5, titulo: 'Samsung m12', precio: 2500.000, descrip: 'bonito'},
-       { id: 6, titulo: 'motorola e 32 ', precio: 2500.000, descrip: 'bonito'},
-       { id: 7, titulo: 'Samsung galaxy s3 ultra +', precio: 2500.000, descrip: 'bonito'},
-       { id: 8, titulo: 'iphone 14 pro max +', precio: 2500.000, descrip: 'bonito'},
-       { id: 9, titulo: 'iphone 7 plus', precio: 500.000, descrip: 'bonito'},
+       { id: 1, titulo: 'motorola one fusion', precio: 45000000, descrip: 'gb 128 , ram 8, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/motorola-one-fusion-upscaled.png')},
+       { id: 2, titulo: 'samsung galaxy s4 ', precio: 15000000, descrip: 'gb 68 , ram 4, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/iphone-x-upscaled.png')},
+       { id: 3, titulo: 'iphone 8 plus', precio: 20000000, descrip: 'gb 42 , ram 3, caja cargador ,caset de proteccion',imagen: require('@/assets/ImagenesProyecto/samsung_galaxy_s4.png')},
+       { id: 4, titulo: 'iphone x ', precio: 25000000, descrip: 'gb 16 , ram 2, caja cargador ,caset de proteccion',imagen: require('@/assets/ImagenesProyecto/samsung_galaxy_s4.png')},
+       { id: 5, titulo: 'Samsung m12', precio: 25000000, descrip: 'gb 32 , ram 4, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/samsung-m12-upscaled.png')},
+       { id: 6, titulo: 'motorola e 32 ', precio: 25000000, descrip: 'gb 68 , ram 4, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/motorola-e32-upscaled.png')},
+       { id: 7, titulo: 'Samsung galaxy s3 ultra +', precio: 25000000, descrip: 'gb 68 , ram 4, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/samsung-galaxy-s3-upscaled.png')},
+       { id: 8, titulo: 'iphone 14 pro max +', precio: 25000000, descrip: 'gb 128 , ram 6, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/iphone-14-pro-max-upscaled.png')},
+       { id: 9, titulo: 'iphone 7 plus', precio: 5000000, descrip: 'gb 32 , ram 2, caja cargador ,caset de proteccion', imagen: require('@/assets/ImagenesProyecto/iphone-7-plus-upscaled.png')},
      ]
    }
  },
  methods: {
+  formatoPesos(valor) {
+    const formato = new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0,
+    });
+
+    return formato.format(valor / 100);
+  },
+
    showData(precio){
     
      this.totales.push(precio.precio);
