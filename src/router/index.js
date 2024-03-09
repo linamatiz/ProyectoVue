@@ -6,6 +6,7 @@ import RegistroView from '../views/RegistroView.vue'
 import QueSomosView from '../views/QueSomosView.vue'
 import PerfilView from '../views/PerfilView.vue'
 import HomeView from '../views/HomeView.vue'
+import pagosView from '../views/PagosView.vue'
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     component: WelcomeView,
+  },
+  {
+    path: '/pagos',
+    name: 'pagos',
+    component: pagosView
   },
 ]
 

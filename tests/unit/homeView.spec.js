@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import HomeView from './../../src/views/HomeView.vue';
 
+
 describe('HomeView.vue', () => {
   it('showData should add data and calculate total correctly', () => {
     const wrapper = shallowMount(HomeView);

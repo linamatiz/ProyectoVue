@@ -21,8 +21,9 @@
                    </button>
                    
                    <button type="button" class="btn btn-danger me-3" style="background-color: darkslategray; border-color:black">
-                     <router-link to="/perfil" style="text-decoration: none">  <a style="text-decoration: none !important; color: white;">Perfil</a>
-                       <i class="fas fa-user-circle" style="font-size: 23px"></i>
+                     <router-link to="/perfil" style="text-decoration: none">
+                      <a class="button-profile">Perfil</a>
+                      <i class="fas fa-user-circle" style="font-size: 23px"></i>
                       </router-link>
                    </button>
                </div>
@@ -51,7 +52,7 @@
            </div>
            <div class="col-md-3 carrito scrollable-content" style="border">
                <div>Carrito de compras</div>
-               <div class="card" style="width: 18rem;">
+               <div class="card">
                  <div class="card-body">
                      <div class="row">
                        <div class="col">
@@ -65,7 +66,9 @@
                      </div>  
 
                      <p class="card-text"><strong>Total:</strong> {{ formatoPesos(totalCarrito)}}</p>
+                     <router-link to="/Pagos" style="text-decoration: ">
                      <button type="button" class="btn btn-primary mt-2">Comprar</button><br>
+                     </router-link>
                      <button type="button" class="btn btn-danger mt-3" @click="clearData">Limpiar carrito</button>
                  </div>
                </div>
@@ -147,6 +150,7 @@ header {
 }
 .card {
    border-color: #08fcfc;
+   width: 18rem;
 }
 .carrito {
    border: 1px solid;
@@ -174,5 +178,10 @@ header {
 /* Estilo de la pista de la barra de desplazamiento */
 .scrollable-content::-webkit-scrollbar-track {
  background-color: #f1f1f1; /* Color de fondo de la pista */
+}
+
+.button-profile {
+  text-decoration: none !important;
+  color: white;
 }
 </style>

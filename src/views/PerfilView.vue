@@ -3,7 +3,7 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-1 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <span class="fs-4" style="color: white">Compra & Venta</span>
+                    <span class="fs-4">Compra & Venta</span>
                         </a>
             </div>
         </div>
@@ -44,6 +44,7 @@
 
                             <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
                         </form>
+                        
                         <router-link to="/home" style="text-decoration: none">
                             <button class="btn btn-danger mt-2">Atras</button>
                         </router-link>
@@ -55,7 +56,6 @@
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Company, Inc</p>
                 <ul class="nav col-md-4 justify-content-end">
-                   
             </ul>
         </footer>
     </div>
@@ -63,7 +63,7 @@
 
 <script>
 export default {
-  name: 'PerfilView'
+name: 'PerfilView'
 //   props: {
 //     msg: String
 //   }
@@ -72,5 +72,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fs-4{
+    color: rgb(132, 209, 205); /* Establecer el color del texto */
+    text-align: center; /* Centrar el texto horizontalmente */
+    font-size: 29px; /* Establecer el tamaño del texto en 29px */
+
+}
 
 </style>
