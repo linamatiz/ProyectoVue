@@ -1,6 +1,6 @@
 <template>
   <header class="p-3 text-bg-dark">
-       <div class="container">
+    <div class="container">
            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                    <span class="fs-4" style="color: white">Compra & Venta</span>
@@ -16,13 +16,13 @@
                
                    <button type="button" class="btn btn-danger me-2">
                     <router-link to="/login" style="text-decoration: none"> 
-                       <a style="text-decoration: none !important;">Cierra Sesion</a>
+                       <a style="text-decoration: none !important;">Cierra sesion</a>
                     </router-link>
                    </button>
                    
-                   <button type="button" class="btn btn-danger me-2" style="background-color: darkslategray; border-color:black">
+                   <button type="button" class="btn btn-danger me-3" style="background-color: darkslategray; border-color:black">
                      <router-link to="/perfil" style="text-decoration: none">  <a style="text-decoration: none !important; color: white;">Perfil</a>
-                       <i class="fas fa-user-circle" style="font-size: 25px"></i>
+                       <i class="fas fa-user-circle" style="font-size: 23px"></i>
                       </router-link>
                    </button>
                </div>
@@ -76,11 +76,7 @@
     <div class="container mt-5">
      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
        <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Company, Inc</p>
-       <ul class="nav col-md-4 justify-content-end">
-         <li>
-           <a class="nav-link px-2 text-secondary" style="color: black !important;">&copy; 2023 Company, Inc</a>
-         </li>
-       </ul>
+
      </footer>
    </div>
 
